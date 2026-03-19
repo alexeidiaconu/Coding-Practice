@@ -55,9 +55,6 @@ public class RemoveElementTest {
                 Arguments.of((Object) new int[]{9, 8, 7, 5, 5,3},5,2,(Object) new int[]{9, 8, 7, 3, -1,-1}),
                 Arguments.of((Object) new int[]{9, 9, 7, 5, 5,9},9,3,(Object) new int[]{7, 5, 5, -1, -1,-1}),
                 Arguments.of((Object) new int[]{9, 9, 9, 7, 9,9},9,5,(Object) new int[]{7, -1, -1,-1, -1,-1})
-
-
-
         );
     }
 }
