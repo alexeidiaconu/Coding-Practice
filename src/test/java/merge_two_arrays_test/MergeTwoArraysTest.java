@@ -20,7 +20,7 @@ public class MergeTwoArraysTest {
 
     @ParameterizedTest
 
-    @MethodSource({"testArrayFromStreams"})
+    @MethodSource("testArrayFromStreams")
 
     public void testBubleSortArray(int[] arrToTest) {
         int[] expected = {3,5,7,8,9};
@@ -40,7 +40,7 @@ public class MergeTwoArraysTest {
     }
     @ParameterizedTest
 
-    @MethodSource({"InitArrayFromStreams"})
+    @MethodSource("InitArrayFromStreams")
 
     public void testInitArray(int[] a1,int[] a2, int nrElem1, int nrElem2){
 
@@ -61,7 +61,7 @@ public class MergeTwoArraysTest {
 
     @ParameterizedTest
 
-    @MethodSource({"MergeArrayFromStreams"})
+    @MethodSource("MergeArrayFromStreams")
 
     public void testMergeArrays(int[] a1,int[] a2, int nrElem1, int nrElem2,int[] expected){
         mergeTwoArrays.initArrays(a1,a2,nrElem1,nrElem2);
