@@ -6,11 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import remove_triplicates.RemoveTriplicates;
 
 import java.util.stream.Stream;
 
-public class TestMajorityElement {
+public class MajorityElementTest {
 
     MajorityElement majorityElement;
 
