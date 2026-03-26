@@ -13,7 +13,7 @@ public class BuyAndSell {
         int maxProfit = 0;
 
         int buy = elementsArray[0];
-        int sell = 0;
+        int sell;
 
         for (int i = 1; i < elementsArray.length; i++) {
             sell = elementsArray[i];
@@ -24,5 +24,18 @@ public class BuyAndSell {
             }
         }
         return maxProfit;
+    }
+
+    public int cumulatedProfit() {
+        int sumProfit = 0;
+
+        for (int i = 1; i < elementsArray.length; i++) {
+
+            if (elementsArray[i] > elementsArray[i - 1]) {
+                sumProfit += (elementsArray[i] - elementsArray[i - 1]);
+            }
+        }
+        return  sumProfit;
+
     }
 }

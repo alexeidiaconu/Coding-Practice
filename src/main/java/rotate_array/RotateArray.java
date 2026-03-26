@@ -1,8 +1,5 @@
 package rotate_array;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class RotateArray {
 
     public int[] elementsArray;
@@ -32,8 +29,8 @@ public class RotateArray {
         reverseArray(steps, elementsArray.length - 1);
 
 
-        for (int i = 0; i < elementsArray.length; i++) {
-            System.out.print(elementsArray[i] + " ");
+        for (int j : elementsArray) {
+            System.out.print(j + " ");
         }
         System.out.println();
     }
