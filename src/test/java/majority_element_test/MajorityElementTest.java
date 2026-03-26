@@ -1,4 +1,4 @@
-package test_majority_element;
+package majority_element_test;
 
 import majority_element.MajorityElement;
 import org.junit.jupiter.api.Assertions;

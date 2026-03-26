@@ -1,6 +1,5 @@
-package test_rotate_array;
+package rotate_array_test;
 
-import majority_element.MajorityElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
