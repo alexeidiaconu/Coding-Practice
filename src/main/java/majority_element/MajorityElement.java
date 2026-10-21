@@ -1,5 +1,7 @@
 package majority_element;
 
+import java.util.Arrays;
+
 public class MajorityElement {
 
     public int[] elementsArray;
@@ -28,4 +30,36 @@ public class MajorityElement {
         }
         return  candidate;
     }
+
+    public int findHIndex2() {
+        int hIndex = 0;
+        Arrays.sort(elementsArray);
+
+        for (int i  = 0; i <= elementsArray.length - 1; i++) {
+
+            if (elementsArray[elementsArray.length - 1 - i] >= i + 1 ) {
+                hIndex = i+1;
+            }
+        }
+        return hIndex;
+    }
+
+    public int findHIndex() {
+
+        int hIndex = 0;
+        Arrays.sort(elementsArray);
+
+        for (int i  = 0; i < elementsArray.length ; i++) {
+
+            hIndex = elementsArray.length -i;
+
+            if (elementsArray[i] >= hIndex) {
+
+                return hIndex;
+            }
+        }
+        return 0;
+    }
+
+
 }
