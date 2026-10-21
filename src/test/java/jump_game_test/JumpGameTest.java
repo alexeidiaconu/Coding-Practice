@@ -1,6 +1,4 @@
 package jump_game_test;
-
-import best_time_to_buy_and_sell.BuyAndSell;
 import jump_game.JumpGame;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

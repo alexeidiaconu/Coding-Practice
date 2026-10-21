@@ -17,10 +17,7 @@ public class JumpGame {
                 goal = i;
             }
         }
-        if (goal == 0) {
-            return true;
-        }
-        return false;
+        return goal == 0;
     }
 
     public int minNrSteps() {
