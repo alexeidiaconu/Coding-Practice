@@ -3,19 +3,20 @@ package randomize_collection_test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import randomize_collection.RandomizeCollection;
-import randomize_set.RandomizedSet;
+import randomize_collection.RandomizedCollection;
+import randomize_collection.RandomizedCollection;
+
 import java.util.stream.Stream;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
 public class RandomizeCollectionTest {
-    private RandomizeCollection randomizeCollection;
+    private RandomizedCollection randomizedCollection;
 
     @BeforeEach
     public void setUp() {
-        randomizeCollection = new RandomizeCollection();
+        randomizedCollection = new RandomizedCollection();
     }
 
     @ParameterizedTest
@@ -27,7 +28,7 @@ public class RandomizeCollectionTest {
             int j = insertValue[i];
             boolean isAdded = expected[i];
 
-            assertEquals(isAdded, randomizeCollection.insert(j));
+            assertEquals(isAdded, randomizedCollection.insert(j));
         }
 
 
@@ -39,7 +40,7 @@ public class RandomizeCollectionTest {
     public void testRemove(int[] insertValue, boolean[] expected) {
 
         for (int k : insertValue) {
-            if (! randomizeCollection.SearchCollection.containsKey(k)) {
+            if (! randomizedCollection.insert(k)) {
                 return;
             }
         }
@@ -48,9 +49,46 @@ public class RandomizeCollectionTest {
             int j = insertValue[i];
             boolean isRemoved= expected[i];
 
-            assertEquals(isRemoved, randomizeCollection.remove(j));
+            assertEquals(isRemoved, randomizedCollection.remove(j));
         }
 
+
+    }
+
+    @ParameterizedTest
+    @MethodSource("randomData")
+    public void testRandomize(int[] insertValue) {
+
+        for (int k : insertValue) {
+            if (! randomizedCollection.insert(k)) {
+                return;
+            }
+        }
+        int expectedIndex = 0;
+        while (!randomizedCollection.ArraySet.isEmpty()) {
+            boolean existsInSet = false;
+            int random = randomizedCollection.getRandom();
+
+            for (int element :randomizedCollection.ArraySet) {
+                if (random == element) {
+                    existsInSet = true;
+                    randomizedCollection.remove(element);
+                    break;
+                }
+            }
+            assertTrue(existsInSet);
+            expectedIndex++;
+        }
+
+    }
+
+    static Stream<Arguments> randomData() {
+
+        return Stream.of(
+                Arguments.of((Object) new int[]{1, 2}),
+                Arguments.of((Object) new int[]{1, 2, 3, 4, 5, 7, 3, 5, 8, 9}),
+                Arguments.of((Object) new int[]{1, 2, 8, 9, 3, 6})
+        );
 
     }
 
@@ -58,10 +96,10 @@ public class RandomizeCollectionTest {
 
         return Stream.of(
                 Arguments.of((Object) new int[]{1, 2, 3, 4, 5, 7}, (Object) new boolean[]{true, true, true, true, true, true}),
+                Arguments.of((Object) new int[]{1, 1, 2, 5, 2, 3, 4, 5, 5, 7}, (Object) new boolean[]{true, false, true, true, true, true, true, true, true, true}),
                 Arguments.of((Object) new int[]{1, 2, 2, 3, 4, 5, 5, 7}, (Object) new boolean[]{true, true, false, true, true, true, false, true}),
-                Arguments.of((Object) new int[]{1, 2, 2, 2, 2}, (Object) new boolean[]{true, true, false, false, false}),
-                Arguments.of((Object) new int[]{1, 2, 3, 4, 5, 7}, (Object) new boolean[]{true, true, true, true, true, true}
-                ));
+                Arguments.of((Object) new int[]{1, 2, 2, 2, 2}, (Object) new boolean[]{true, true, false, false, false})
+                                );
 
     }
 
