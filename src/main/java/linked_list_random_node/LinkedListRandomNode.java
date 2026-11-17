@@ -15,7 +15,7 @@ public class LinkedListRandomNode {
 
 
 
-    Integer getRandom() {
+    public Integer getRandom() {
         int count = 0;
         int result = 0;
         ListNode current = this.listHead;
